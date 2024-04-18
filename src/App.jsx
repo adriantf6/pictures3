@@ -5,10 +5,15 @@ import searchImage from './api'
 import './App.css'
 
 function App() {
-const[images,SetImage] = useState([])
+const[images,SetImages] = useState([])
 
 const handleSubmit = async(term)=> {
   console.log('usted esta buscando: ',term)
+  const result=await searchImage(term)
+
+  console.log('coco')
+  console.log(result)
+  SetImages(result)
 }
   return (
     
@@ -16,6 +21,7 @@ const handleSubmit = async(term)=> {
        
 <h1>App</h1>
 <SearchBar onSubmit={handleSubmit}/>
+<ImageList images={images}/>
     </div>
   )
 }

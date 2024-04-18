@@ -1,7 +1,7 @@
-function ImageShow(){
+function ImageShow({images}){
     return(
         <div>
-            <h1>Image Show: </h1>
+            <img src={images.urls.small} alt={images.alt_description}/>
         </div>
     )
 }
